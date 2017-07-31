@@ -13,11 +13,11 @@ ng-mouseleave="hideSales='true'"
 angular.element(document.querySelectorAll(".tabs")).removeClass("active");
 angular.element(document.querySelector("#tab2")).addClass("active");
 
-#Version
+# Version
 
 Angular 1.x
 
-#License
+# License
 
 This app is developed under MIT license
 
