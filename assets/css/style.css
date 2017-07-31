@@ -1,0 +1,238 @@
+@font-face  /*font style*/
+{
+	font-family: "myFont";
+	src: url('../fonts/Wagner Modern.ttf') format('truetype');
+}
+h5  /*header*/
+{
+	background-color:#ffff7c;
+	padding: 15px;
+	margin: 0px;
+}
+#headerpart
+{
+	position: fixed;
+	z-index: 10;
+}
+#bodypart
+{
+	padding-top: 120px;
+}
+.btn  /*drop down button*/
+{
+	padding: 0px 54px;
+	background-color: white;
+}
+.breadcrumb
+{
+	padding: 5px 230px;
+}
+.breadcrumb li
+{
+	font-family: "myFont";
+	font-size: 30px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.breadcrumb li #blackbg:hover
+{
+	background-color: black;
+}
+.breadcrumb li #whiteclr:hover
+{
+	background-color: black;
+	color: white;
+}
+.dropdown,.dropdown-menu li
+{
+	font-family: initial !important;
+	font-size: initial;
+}
+.dropdown-menu
+{
+	overflow:scroll;
+	height: 250px;
+}
+#logo
+{
+	z-index: 100;
+	margin-top: -158px;
+	width: 120px;
+	height: 110px;
+}
+#text  /*search box in drop down*/
+{
+	border-right: none;
+}
+.input-group-addon
+{
+	background-color: white;
+}
+.newlabel
+{
+	font-size: 20px;
+}
+#blackbox
+{
+	border: 1px solid black;
+	padding-top: 31px;
+    padding-bottom: 12px;
+	background-color: black;
+	width: 90%;
+}
+#cost
+{
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+}
+#cart  /*add cart button*/
+{
+	border:1px solid black;
+	padding: 9px;
+	background-color: green;
+	color: white;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+.nav li a 	/*tabs*/
+{
+	color: black;
+	padding: 5px 9px;
+	border:1px solid #ccc;
+	cursor: pointer !important;
+	background-color: #efefef;
+	border-radius: 0px;
+	margin: 0px;
+}
+.nav li a:hover  /*tabs*/
+{
+	background-color: black;
+	color: white;
+}
+.nav-tabs
+{
+	width: 485px;
+	border-bottom: none !important;
+}
+.tabcontent
+{
+	border-radius: 0px;
+	width: 468px;
+	padding: 10px;
+	height: 402px;
+	display: none;
+}
+#blackcolor
+{
+	padding: 6px;
+	background-color: black;
+	width: 38%;
+	color: white;
+}
+.panel ul 
+{
+	list-style: none;
+}
+#email  /*email input box*/
+{
+	width: 96% !important;
+}
+.show
+{
+	display: inline;
+}
+.active  /*tabs active*/
+{
+	color: #555;
+	background-color: #fff;
+	border-bottom-color: transparent;
+}
+.labels  /*social link labels*/
+{
+	padding: 5px;
+}
+.imagepanel  /*product images panel*/
+{
+	width: 100%;
+    height: 340px;
+    overflow: scroll;
+    white-space:nowrap;
+    overflow-y: hidden;
+}
+.imagepanel ul li
+{
+	display: inline-block;
+}
+.img-circle 
+{
+	border:3px solid;
+}
+#circleimg
+{
+	z-index: 10;
+	margin-top: -60px;
+}
+#circleimg img
+{
+	cursor: pointer;
+}
+.col-md-5 .bigcap
+{
+	display: none;
+}
+#brandsList,#mens,#womens,#sales  /*breadcrumb tabs content*/
+{
+	background-color: black;
+	color: white;
+	z-index: 1 !important;
+	position: absolute;
+	padding-top: 101px;
+	margin-top: 20px;
+}
+#sales .col-md-12,#brandsList .row ,#mens .row,#womens .row   /*breadcrumb tabs content*/
+{
+	margin-left: 300px;
+}
+h2
+{
+	font-family: "myFont";
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+#brandsList .col-md-4,#mens .col-md-4,#womens .col-md-4  /*breadcrumb tabs content*/
+{
+	margin-right: -54px;
+}
+.container  /*breadcrumb tabs content*/
+{
+	width: 70%;
+}
+.col-md-5 p #lazy:hover  /*p element in tabs content*/
+{
+	cursor: pointer;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+.col-md-4 #cart:hover  /*add to cart button on hover*/
+{
+	cursor: pointer;
+	background-color: #3fc695;
+}
+.well .row .col-md-4 p  
+{
+	margin-bottom: 3px;
+	font-size: 12px;
+}
+.well .row .col-md-4 p:hover
+{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.well  /*footer */
+{
+	border-bottom: none;
+	margin-bottom: 0px;
+	opacity: 0.7;
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tabs and Sub-tabs">
+    <meta name="author" content="Bhaskararao Gummidi">
+    <title>Tabs and Sub-tabs</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="./assets/js/script.js"></script>
+</head>
+<body ng-controller="myCtrl">
+<div id="headerpart">
+ <h5 class="text-center">~ END OF SEASON SALE NOW ON! 20%-50% OFF SELECTED STOCK ~</h5>
+    <ul class="breadcrumb">
+        <li style="color: green;" ng-mouseover="hideAll()"><span id="blackbg">NEW</span></li>
+        <li style="color: darkred;" ng-mouseover="showSales()"><span id="blackbg">SALE</span></li>
+        <li><span id="whiteclr" ng-mouseover="showBrands()">BRANDS</span></li>
+        <li><span id="whiteclr" ng-mouseover="showMens()">MENS</span></li>
+        <li><span id="whiteclr" ng-mouseover="showWomens()">WOMENS</span></li>
+        <li><span id="whiteclr" ng-mouseover="hideAll()">LOOKBOOKS</span></li>
+        <li class="dropdown">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">lazy oaf
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li class="input-group">
+                <input type="text" name="search" placeholder="Search" class="form-control" id="text" ng-model="searchText">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                </li>
+                <li ng-repeat="brand in brands | filter:searchText"><a href="#">{{brand}}</a></li>
+            </ul>
+        </li>
+    </ul>
+    <img src="./assets/images/logo.jpg" id="logo">
+</div>  <!-- headerpart ended -->
+<div id="sales" ng-hide="hideSales" class="container" ng-mouseleave="hideSales='true'">  <!-- sales tab content starting-->
+  <div class="row">
+      <div class="col-md-12">
+        <h2>FOOTWEAR SALE</h2>
+        <h2>MENS SALE</h2>
+        <p>20% - 40% off</p>
+        <p>50% - 70% off</p>
+        <p>Under $100</p>
+        <h2>WOMENS SALE</h2>
+        <p>20% - 40% off</p>
+        <p>50% - 70% off</p>
+        <p>Under $100</p>
+        <h2>SALE SUNNIES</h2>
+        <h2>SALE JEWELS</h2>
+        <h2>SALE ACCS</h2>
+      </div>
+  </div>
+</div>  <!-- sales tab content ending -->
+<div class="container" id="brandsList" ng-hide="hideBrands" ng-mouseleave="hideBrands='true'"> <!-- brands tab content starting -->
+    <div class="row">
+        <div class="col-md-4">
+            <p>Brain Dead</p>
+            <p>Champion</p>
+            <p>Colab</p>
+            <p>Good Thing</p>
+            <p>Good as Gold</p>
+            <p>Hansel from Basel</p>
+            <p>Henrik Vibskov</p>
+            <p>Herschel Supply Co</p>
+            <p>Izola</p>
+            <p>Jasmin Sparrow</p>
+            <p>Jason Markk</p>
+            <p>Kaibosh</p>
+            <p>Kowtow</p>
+            <p>Lazy Oaf</p>
+            <p>Levi's</p>
+            <p>Maharishi</p>
+            <p>Meadowlark</p>
+            <p>MyDeerFox</p>
+            <p>Nobody Denim</p>
+        </div>
+        <div class="col-md-4">    
+            <p>Norse Projects</p>
+            <p>Odeme</p>
+            <p>Parra</p>
+            <p>Patagonia</p>
+            <p>Permanent Vacation</p>
+            <p>Perks and Mini</p>
+            <p>Reality Studio</p>
+            <p>Rollas</p>
+            <p>Royal Republiq</p>
+            <p>Puebco</p>
+            <p>Stan Ray</p>
+            <p>Status Anxiety</p>
+            <p>Taikan Everything</p>
+            <p>The Fifth</p>
+            <p>TID Watches</p>
+            <p>The Horse</p>
+            <p>Wood Wood</p>
+            <p>Wos</p>
+            <p>Yu Mei</p>
+        </div>
+        <div class="col-md-4">    
+            <h2>FOOTWEAR</h2>
+            <p>Adidas Originals</p>
+            <p>Bata Bullets</p>
+            <p>Intentionally Blank</p>
+            <p>Nike</p>
+            <p>New Balance</p>
+            <p>People Footwear</p>
+            <p>Puma</p>
+            <p>Reebok</p>
+            <p>Vans</p>
+            <p>Veja</p>
+            <h2>ALL BRANDS </h2>
+        </div>
+     </div>  <!-- row ending -->
+</div>  <!-- brands tab content ending -->
+<div class="container" id="mens" ng-hide="hideMens" ng-mouseleave="hideMens='true'">  <!-- mens tab content starting -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>NEW</h2>
+            <h2>EXCLUSIVE</h2>
+            <h2>FOOTWEAR</h2>
+            <h2>TOPS</h2>
+            <p>T-shirts</p>
+            <p>Long Sleeve T-Shirts</p>
+            <p>Shirts</p>
+            <p>Crews / Hoods</p>
+            <p>Outerwear</p>
+            <h2>BOTTOMS</h2>
+            <p>Shorts</p>
+            <p>Pants</p>
+            <p>Denim</p>
+            <h2>ACCESSORIES</h2>
+            <p>Bags</p>
+            <p>Wallets</p>
+            <p>Cases & Sleeves</p>
+            <p>Watches</p>
+            <p>Sunglasses</p>
+        </div>
+        <div class="col-md-4">
+            <p>Hats</p>
+            <p>Socks & Undies</p>
+            <p>Belts</p>
+            <h2>JEWWLLERY</h2>
+            <h2>GOODS</h2>
+            <p>Grooming Products</p>
+            <p>Homeware</p>
+            <p>Magazines</p>
+            <h2>STUFF</h2>
+            <p>Kids</p>
+            <p>Knives</p>
+            <h2>GIFTS</h2>
+            <h2>SALE</h2>
+            <h2>LAST PAIRS</h2>
+        </div> 
+      </div>  <!-- row ending -->
+</div>  <!-- mens tab content ending -->
+<div class="container" id="womens" ng-hide="hideWomens" ng-mouseleave="hideWomens='true'">  <!-- womens tab content starting -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>NEW</h2>
+            <h2>EXCLUSIVE</h2>
+            <h2>FOOTWEAR</h2>
+            <h2>TOPS</h2>
+            <p>T-shirts</p>
+            <p>Shirts</p>
+            <p>Sweaters</p>
+            <p>Knitwear</p>
+            <p>Outerwear</p>
+            <h2>DRESSES</h2>
+            <h2>BOTTOMS</h2>
+            <p>Shorts / Skirts</p>
+            <p>Pants</p>
+            <p>Jumpsuits</p>
+            <p>Denim</p>
+            <p>Underwear</p>
+            <h2>ACCESSORIES</h2>
+            <p>Bags & Wallets</p>
+            <p>Cases & Sleeves</p>
+        </div>
+        <div class="col-md-4">
+            <p>Sunglasses</p>
+            <p>Hats</p>
+            <p>Socks & Tights</p>
+            <p>Watches</p>
+            <h2>JEWELLERY</h2>
+            <p>Rings</p>
+            <p>Earrings</p>
+            <p>Bracelets</p>
+            <p>Necklaces</p>
+            <h2>GOODS</h2>
+            <p>Hair & Body</p>
+            <p>Homeware</p>
+            <p>Magazines</p>
+            <h2>STUFF</h2>
+            <p>Kids</p>
+            <p>Knives</p>
+            <h2>GIFTS</h2>
+            <h2>SALE</h2>
+            <h2>LAST PAIRS</h2>
+        </div>
+    </div>  <!-- row ending  -->
+</div>  <!-- womens tab content ending -->
+<div class="row" id="bodypart"> 
+    <div class="col-md-5 text-center" style="margin-left: 30px;">  <!-- col-md-5 sliding part starting-->
+        <img src="./assets/images/cap1.jpg" width="465" height="700" class="bigcap show" id="bigcap1">
+        <img src="./assets/images/cap2.jpg" width="465" height="700" class="bigcap" id="bigcap2">
+        <img src="./assets/images/cap3.jpg" width="465" height="700" class="bigcap" id="bigcap3">
+        <img src="./assets/images/cap4.jpg" width="465" height="700" class="bigcap" id="bigcap4">
+        <div id="circleimg" class="row">
+         <div class="col-md-4"></div>
+         <div class="col-md-8 col-md-offset-4">
+            <div class="col-md-2">
+            <img src="./assets/images/cap1.jpg" width="50" height="50" class="img-circle smallcap hide" ng-click="showCap1()" id="smallcap1"></div>
+            <div class="col-md-2">
+            <img src="./assets/images/cap2.jpg" width="50" height="50" class="img-circle smallcap" ng-click="showCap2()" id="smallcap2"></div>
+            <div class="col-md-2">
+            <img src="./assets/images/cap3.jpg" width="50" height="50" class="img-circle smallcap" ng-click="showCap3()" id="smallcap3"></div>
+            <div class="col-md-2">
+            <img src="./assets/images/cap4.jpg" width="50" height="50" class="img-circle smallcap" ng-click="showCap4()" id="smallcap4"></div>
+         </div>
+        </div>
+    </div>  <!-- col-md-5 sliding part ending -->
+    <div class="col-md-5">
+        <span class="label label-success newlabel">NEW</span><h1 style="font-family:'myFont'">X HELLO KITTY BOW TIE CAP - WHITE</h1>
+        <p style="opacity: 0.5;">from <u id="lazy">LAZY OAF</u></p>
+        <div id="blackbox" class="row">  <!-- black box starting -->
+            <div class="col-md-4 text-center">
+                <span id="cost">$69.00</span><small style="color: white;">nzd</small>
+            </div>
+            <div class="col-md-4 text-center">
+                <span style="color: white;">Select size.<i class="badge">?</i></span><br>
+                <select>
+                    <option>Select</option>
+                    <option>ONE SIZE</option>
+                </select>
+            </div>
+            <div class="col-md-4 text-center">
+                <span id="cart">ADD TO CART?</span>
+            </div>
+        </div>  <!-- black box ending -->
+        <p>Or 6 payments from $11.50 </p>
+        <ul class="nav nav-tabs">  <!-- tabs -->
+          <li class="active tabs" ng-click="showDescript()" id="tab1"><a href="#">Description</a></li>
+          <li ng-click="showShipping()" id="tab2" class="tabs"><a href="#">Free Shipping</a></li>
+          <li ng-click="showReturns()" id="tab3" class="tabs"><a href="#">Easy Returns</a></li>
+          <li ng-click="showPayment()" id="tab4" class="tabs"><a href="#">Payment</a></li>
+          <li ng-click="showQuestions()" id="tab5" class="tabs"><a href="#">Questions?</a></li>
+        </ul>
+        <div class="panel panel-default tabcontent show" id="tabcontent1">  <!-- tab content -->
+            <p id="blackcolor">SIZE GONE? HIT THIS</p><br>
+            <p>Lazy Oaf X Hello Kitty Bow Tie Cap - white</p>
+            <p>Fit: One size fits all</p>
+            <p>Material: 100% cotton</p><br>
+            <ul>
+                <li>- 6 panel cap</li>
+                <li>- Embroidered Hello Kitty detail on front</li>
+                <li>- Red ribbon fastening at back</li>
+                <li>- Blue button on top</li>
+            </ul>
+        </div>
+        <div class="panel panel-default tabcontent" id="tabcontent2">
+            <p>New Zealand: Spend over $99 NZD and we'll ship free. Orders under $99 will be $5NZD.</p><br>
+            <p>Australia: Spend over $99 NZD and it's free. Orders under $99 will cost $15NZD to ship.</p><br>
+            <p>Most of the Rest the World: Spend over $299 NZD and shipping worldwide is free, otherwise it’ll cost you around $30NZD (certain countries may cost a little extra, but we will contact you in this case).</p><br>
+            <p><u>More information on shipping/express shipping</u></p>
+        </div>
+        <div class="panel-default tabcontent panel" id="tabcontent3">
+            <p>IF YOU DON’T LIKE IT, JUST SEND IT BACK!**</p><br>
+            <p>There's no need to be nervous, if you find that:</p><br>
+            <p>It doesn’t fit</p>
+            <p>It isn’t as you imagined, or</p>
+            <p>You were drunk when you ordered it</p>
+            <p>You can always send it back and we will swap it or refund you no problem!! Just get in touch within 7days and make sure it’s still brand new/unworn, tags attached.</p><br>
+            <p><u>More information on shipping/returns</u></p><br>
+            <p>**Does not apply to sale items, faulty items and special/back ordered items.</p>
+        </div>
+         <div class="panel-default tabcontent panel" id="tabcontent4">
+            <p>We accept all major credit cards through eWay or Paypal and our NZ homies can also pay by POLi or bank deposit. Either way you will need to make payment at the time of purchase.</p>
+         </div>
+         <div class="panel-default tabcontent panel" id="tabcontent5">
+             <p>Still unsure? Get in touch by filling out the details below and we will get back to you asap!!</p>
+             <hr>
+             EMAIL ADDRESS:<br>
+             <input type="text" name="email" id="email">
+             <hr>
+             QUESTIONS:<br>
+             <textarea rows="4" cols="50">
+                 
+             </textarea>
+             <hr>
+             <button type="button" class="btn-success">SEND</button>
+         </div>
+         SHOW YOUR MATES:   <!-- social links -->
+         <span class="label label-primary labels"><i class="glyphicon glyphicon-thumbs-up"></i> Like 0</span> 
+         <span class="label label-success labels"><b>tumbler. +</b></span> 
+         <span class="label label-warning labels"> Follow on <b>Nuji</b></span> 
+         <span class="label label-danger labels"> Pin It </span>
+         <br><br>
+         <div class="panel panel-default imagepanel">  <!-- panel for product images sliding -->
+             <span>you may also like these:</span><span class="pull-right" style="opacity: 0.5;">scroll &#8594;</span>
+                <ul>
+                     <li><img src="./assets/images/dress6.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress1.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top1.jpg" height="292" width="155"></li>                   
+                     <li><img src="./assets/images/dress2.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top2.jpg" height="292" width="155"></li>               
+                     <li><img src="./assets/images/dress3.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress4.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/cap7.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress5.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress7.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/bag4.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress8.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top6.jpg" height="292" width="155"></li>                   
+                     <li><img src="./assets/images/dress9.jpg" height="292" width="155"></li>               
+                     <li><img src="./assets/images/dress10.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/cap5.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress11.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/socks2.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress12.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/ball.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress13.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top7.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress14.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/bag1.jpg" height="292" width="155"></li>                   
+                     <li><img src="./assets/images/dress15.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top3.jpg" height="292" width="155"></li>               
+                     <li><img src="./assets/images/dress16.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/bag5.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress17.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top8.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress18.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/bag2.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress19.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top4.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/dress20.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top9.jpg" height="292" width="155"></li>                   
+                     <li><img src="./assets/images/dress21.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top10.jpg" height="292" width="155"></li>               
+                     <li><img src="./assets/images/dress22.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/bag3.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress23.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/socks.jpg" height="292" width="155"></li>                    
+                     <li><img src="./assets/images/dress24.jpg" height="292" width="155"></li>
+                     <li><img src="./assets/images/top5.jpg" height="292" width="155"></li> 
+                </ul>     
+             </div>
+         </div>  <!-- col-md-5 ending -->
+    </div>  <!-- row ending -->
+    <div class="well">  <!-- well for footer -->
+        <div class="row" style="margin-left: 200px;">
+            <div class="col-md-4">
+                <h3>Information</h3>
+                <p>ABOUT US</p>
+                <p>CONTACT</p>
+                <p>STORES</p>
+                <p>CARRERS</p>
+                <p>GAG DISTRIBUTION</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Customer Guide</h3>
+                <p>CUSTOMER REVIEWS</p>
+                <p>SHIPPING & DELIVERY</p>
+                <p>RETURNS & EXCHANGES</p>
+                <p>SIZING GUIDE</p>
+                <p>TERMS OF SERVICE</p>
+                <p>NEW* LAYBUY</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Follow Us</h3>
+                <p>BLOG</p>
+                <p>FACEBOOK</p>
+                <p>INSTAGRAM</p>
+                <p>IMAGE DUMP</p>
+                <p>GOOD SHIT MAP</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
